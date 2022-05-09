@@ -9,9 +9,21 @@ const baseUrl = 'http://localhost:8080';
 })
 export class MovimentacaoService {
 
-  constructor( private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   list(): Observable<any> {
     return this.http.get(`${baseUrl}/movimentacoes`);
   }
+
+  // adicionando o metodo de puxar correntista por id
+
+  findByIdConta(idConta:any): Observable<any> {
+    return this.http.get(`${baseUrl}/movimentacoes/${idConta}`);
+  }
+
+  // adicionando o método de inclusão (POST) via API
+  create(movimentacao: any): Observable<any> {
+    return this.http.post(`${baseUrl}/movimentacoes`, movimentacao);
+  }
+
 }
