@@ -32,7 +32,9 @@
                 <input type="text" [(ngModel)]="valor" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" class="form-control" id="iValor">
             </div>
             <div class="d-grid gap-2 d-md-flex ">
+                <a routerLink="/movimentacoes">
                 <button class="btn btn-outline-primary me-md-2" (click)="save()" type="button">Confirmar</button>
+                </a>
                 <a routerLink="/movimentacoes" class="btn btn-outline-secondary">Cancelar</a>
             </div>
 
